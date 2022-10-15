@@ -12,7 +12,6 @@ namespace Delegates
         public Predicate<int> Calc(Func<int, int, int> multiply, int x, int y)
         {
             _value = multiply(x, y);
-            Console.WriteLine(_value);
             Predicate<int> result = Result;
             return result;
         }
@@ -20,7 +19,6 @@ namespace Delegates
         public bool Result(int value)
         {
             int result = _value % value;
-            Console.WriteLine(result);
             if (result == 0)
             {
                 return true;

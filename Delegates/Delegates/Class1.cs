@@ -13,26 +13,9 @@ namespace Delegates
 
         public static int Multiply(int x, int y) => x * y;
 
-        public void ARARAT()
+        public void Execute(int x, int y, int z)
         {
-            _action(new Class2().Calc(_toDo, ReturnValue(), ReturnValue())(ReturnValue()));
-        }
-
-        public int ReturnValue()
-        {
-            int x = 0;
-            Console.WriteLine("Введите число: ");
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out x))
-                {
-                    break;
-                }
-
-                Console.WriteLine("Введите корректное значение: ");
-            }
-
-            return x;
+            _action(new Class2().Calc(_toDo, x, y)(z));
         }
     }
 }
