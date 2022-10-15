@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace Delegates
 {
-    internal class Class2
+    public class Class2
     {
+        private int _value = 0;
+        public Predicate<int> Calc(Func<int, int, int> multiply, int x, int y)
+        {
+            _value = multiply(x, y);
+            Predicate<int> result = Result;
+            return result;
+        }
+
+        public bool Result(int value)
+        {
+            int result = _value % value;
+            if (result == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
